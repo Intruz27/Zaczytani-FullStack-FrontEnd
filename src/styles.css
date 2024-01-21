@@ -1,0 +1,14 @@
+*{
+    font-family: 'Courier Prime', monospace;
+    color: white;
+}
+
+.books-page-background {
+    background-image: url("assets/booksBackground10.png");
+    background-size: cover;
+}
+
+.h-100 {
+    min-height: 100vh;
+    height: 100%;
+}

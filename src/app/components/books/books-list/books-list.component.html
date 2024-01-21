@@ -1,0 +1,25 @@
+<div class="books-page-background h-100">
+  <app-navbar></app-navbar>
+  <div class="container pt-5 pb-4">
+    <h1 class="mb-4 ms-2">Lista pozycji</h1>
+    <div class="container">
+      <div class="row">
+        <div class="c-col-8 col-md-6 col-lg-3" *ngFor="let item of books">
+         <div class="card">
+           <img src="../../../../assets/bookImage1.jpeg" class="card-img-top" alt="..." style="max-height: 250px;">
+           <div class="card-body">
+             <h4 class="card-title">{{item.title}}</h4>
+             <h5 class="card-subtitle mb-2 text-body-secondary">{{item.author}}</h5>
+             <p class="card-title mb-2">{{item.location}}</p>
+           </div>
+           <div class="card-footer">
+              <button type="button" class="btn btn-outline-primary me-2 mb-2" [routerLink]="['/show/' + item.id]">Podgląd</button>
+              <button type="button" class="btn btn-outline-secondary me-2 mb-2" [routerLink]="['/edit/' + item.id]">Edytuj</button>
+              <button type="button" class="btn btn-outline-danger mb-2" (click)="deleteBook(item.id)">Usuń</button>
+           </div>
+         </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
