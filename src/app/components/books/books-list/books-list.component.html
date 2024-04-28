@@ -1,7 +1,7 @@
 <div class="books-page-background h-100">
   <app-navbar></app-navbar>
   <div class="container pt-5 pb-4">
-    <h1 class="mb-4 ms-2">Lista pozycji</h1>
+    <app-header class="ms-2" [title]="'Lista pozycji'"></app-header>
     <div class="container">
       <div class="row">
         <div class="c-col-8 col-md-6 col-lg-3" *ngFor="let item of books">
@@ -13,9 +13,15 @@
              <p class="card-title mb-2">{{item.location}}</p>
            </div>
            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary me-2 mb-2" [routerLink]="['/show/' + item.id]">Podgląd</button>
-              <button type="button" class="btn btn-outline-secondary me-2 mb-2" [routerLink]="['/edit/' + item.id]">Edytuj</button>
-              <button type="button" class="btn btn-outline-danger mb-2" (click)="deleteBook(item.id)">Usuń</button>
+              <button type="button" class="btn btn-outline-primary me-2 mb-2" 
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Operacja przenosi na stronę podglądu elementu"
+              [routerLink]="['/show/' + item.id]">Podgląd</button>
+              <button type="button" class="btn btn-outline-secondary me-2 mb-2" 
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Operacja przenosi na stronę edycji"
+              [routerLink]="['/edit/' + item.id]">Edytuj</button>
+              <button type="button" class="btn btn-outline-danger mb-2" 
+              data-bs-toggle="tooltip" data-bs-placement="top" title="Operacja bezpowrotnie usuwa element"
+              (click)="deleteBook(item.id)">Usuń</button>
            </div>
          </div>
       </div>

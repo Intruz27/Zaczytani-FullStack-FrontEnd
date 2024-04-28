@@ -1,8 +1,7 @@
 <div class="books-page-background h-100">
   <app-navbar></app-navbar>
   <div class="container pt-5 pb-4">
-    <h1 *ngIf="!readonly" class="mb-4">Edytuj</h1>
-    <h1 *ngIf="readonly" class="mb-4">Podgląd</h1>
+    <app-header [title]="readonly ? 'Podgląd' : 'Edytuj'"></app-header>
     <form #form="ngForm" (ngSubmit)="updateBook()">
         <div class="row">
             <div class="col-12 col-md-6">

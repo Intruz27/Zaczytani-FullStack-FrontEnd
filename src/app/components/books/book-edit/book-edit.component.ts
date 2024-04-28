@@ -5,14 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { Book } from '../../../models/book.model';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../../../header/header.component";
 
 @Component({
-  selector: 'app-book-edit',
-  standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent, RouterModule],
-  providers: [BooksService],
-  templateUrl: './book-edit.component.html',
-  styleUrl: './book-edit.component.css'
+    selector: 'app-book-edit',
+    standalone: true,
+    providers: [BooksService],
+    templateUrl: './book-edit.component.html',
+    styleUrl: './book-edit.component.css',
+    imports: [CommonModule, FormsModule, NavbarComponent, RouterModule, HeaderComponent]
 })
 export class BookEditComponent implements OnInit{
   public readonly: boolean = false;

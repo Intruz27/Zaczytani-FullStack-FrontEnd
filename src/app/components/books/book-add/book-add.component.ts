@@ -4,14 +4,15 @@ import { BooksService } from '../../../services/books.service';
 import { Router } from '@angular/router';
 import { Book } from '../../../models/book.model';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { HeaderComponent } from "../../../header/header.component";
 
 @Component({
-  selector: 'app-book-add',
-  standalone: true,
-  imports: [FormsModule, NavbarComponent],
-  providers: [BooksService],
-  templateUrl: './book-add.component.html',
-  styleUrl: './book-add.component.css'
+    selector: 'app-book-add',
+    standalone: true,
+    providers: [BooksService],
+    templateUrl: './book-add.component.html',
+    styleUrl: './book-add.component.css',
+    imports: [FormsModule, NavbarComponent, HeaderComponent]
 })
 export class BookAddComponent {
   addBookRequest: Book = {

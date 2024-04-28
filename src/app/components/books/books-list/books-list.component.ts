@@ -5,14 +5,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 import { Book } from '../../../models/book.model';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { HeaderComponent } from "../../../header/header.component";
 
 @Component({
-  selector: 'app-books-list',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule, NavbarComponent],
-  providers: [HttpClient, BooksService],
-  templateUrl: './books-list.component.html',
-  styleUrl: './books-list.component.css'
+    selector: 'app-books-list',
+    standalone: true,
+    providers: [HttpClient, BooksService],
+    templateUrl: './books-list.component.html',
+    styleUrl: './books-list.component.scss',
+    imports: [CommonModule, HttpClientModule, RouterModule, NavbarComponent, HeaderComponent]
 })
 export class BooksListComponent implements OnInit{
   
@@ -69,6 +70,7 @@ export class BooksListComponent implements OnInit{
     this.booksService.deleteBook(id).subscribe({
       next: () => {
         this.router.navigate(['list']);
+        this.books = this.books.filter(item => item.id != id);
       }
     })
   }
