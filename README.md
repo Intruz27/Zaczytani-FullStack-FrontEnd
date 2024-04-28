@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Aby uruchomić aplikację należy pobrać i uruchomić backend https://github.com/Intruz27/Zaczytani-FullStack-BackEnd. Konieczne może okazać się skonfigurowanie linku do bazy danych.
+Następnie pobieramy część frontendową, instaljemy paczki przy pomocy komendy "npm i" a następnie włączamy server instrukcją "ng s".
+
