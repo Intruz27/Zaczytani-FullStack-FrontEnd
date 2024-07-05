@@ -1,0 +1,91 @@
+<div class="container py-5 text-justify">
+  <h1 *ngIf="isCar" class="mb-3">{{carData.brand}} {{carData.model}} {{carData.version}}</h1>
+  <h1 *ngIf="!isCar"class="mb-3">{{partData.title}} </h1>
+  <div 
+  *ngIf="isUserLogged"
+  class="col-12 d-flex flex-wrap align-items-start justify-content-start">
+    <div *ngIf="isCar">
+    <button
+      type="reset"
+      class="btn btn-primary mt-2 me-2 btn-field-h"
+      (click)="redirectToEdit(carData.id)"
+    >
+      Edytuj
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger mt-2 btn-field-h"
+      (click)="delete(carData.id)"
+    >
+    Usuń
+    </button>
+    </div>
+    <div 
+    *ngIf="!isCar"
+    >
+    <button
+      type="reset"
+      class="btn btn-primary mt-2 me-2 btn-field-h"
+      (click)="redirectToEdit(partData.id)"
+    >
+      Edytuj
+    </button>
+    
+    <button
+      type="button"
+      class="btn btn-danger mt-2 btn-field-h"
+      (click)="delete(partData.id)"
+    >
+    Usuń
+    </button>
+  </div>
+   
+  </div>
+  <div *ngIf="isCar"class="mt-3">
+    <img src="{{carData.imageLink}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+    <img src="{{carData.imageLink2}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+    <img src="{{carData.imageLink3}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+  </div>
+  <div *ngIf="!isCar" class="mt-3">
+    <img src="{{partData.imageLink}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+    <img src="{{partData.imageLink2}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+    <img src="{{partData.imageLink3}}" alt="image" height="420px" width="420px" class="mr-12 mb-3">
+  </div>
+  <h3 class="mb-3">Szczegóły: </h3>
+  <div>
+    <app-car-details
+      *ngIf="isCar"
+      [carData]="carData"
+    ></app-car-details>
+    <app-part-details
+      *ngIf="!isCar"
+      [partData]="partData"
+    ></app-part-details>
+    <div *ngIf="isCar" class="mb-3">
+      <h3 class="mt-3 mb-3">Opis: </h3>
+      <p>{{carData.description}}</p>
+    </div>
+    <div *ngIf="!isCar" class="mb-3">
+      <h3 class="mt-3 mb-3">Opis: </h3>
+      <p>{{partData.description}}</p>
+    </div>
+    <div>
+      <h4 class="mb-3">Kontakt ze sprzedającym: </h4>
+      <p>VERTICAR</p>
+      <p>123132123</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<h1>Poszukujemy developera HTML i CSS</h1>
+
+<img src="images/white-cat.jpg">
+<p>Dla naszego klienta, Kociej Fabryki, <strong>poszukujemy zdolnego programisty</strong> 
+  stron internetowych w HTML i CSS. Oferujemy przyzwoite zarobki, worek karmy i zabawek.
+</p>
+
+<p>Nie czekaj, napisz teraz! Nasza zwariowana ekipa czeka na Ciebie!</p>

@@ -1,0 +1,33 @@
+<div class="container py-5 text-justify">
+  <h1 class="mb-3 text-center">Panel logowania</h1>
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-12 col-md-4"></div>
+      <div class="col-12 col-md-4">
+        <label class="mb-1 ms-1">Login</label>
+        <input type="text" name="nick" id="nick" class="form-control" formControlName="userName">
+      </div>
+      <div class="col-12 col-md-4"></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 col-md-4"></div>
+      <div class="col-12 col-md-4">
+        <label class="mb-1 ms-1">Hasło</label>
+        <input type="password" name="password" id="password" class="form-control" formControlName="password">
+      </div>
+      <div class="col-12 col-md-4"></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 col-md-4"></div>
+      <div class="col-12 col-md-4">
+        <button 
+        class="btn-width btn btn-primary ms-2 mt-2 mb-2 btn-field-h"
+        (click)="logUser()">
+        Zaloguj
+        </button>
+      </div>
+      <div class="col-12 col-md-4"></div>
+    </div>
+  </form>
+</div>
+

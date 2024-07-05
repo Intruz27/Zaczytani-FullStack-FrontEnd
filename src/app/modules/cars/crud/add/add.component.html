@@ -1,0 +1,28 @@
+<div class="container py-5 text-justify">
+  <h1 *ngIf="!isEdit" class="mb-3">Dodaj Element</h1>
+  <h1 *ngIf="isEdit" class="mb-3">Edytuj Element</h1>
+  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod tellus nec ex dapibus
+    ultrices.
+    Nullam feugiat ultricies ipsum, quis sodales velit auctor et. Nam aliquam dui sit amet ex hendrerit, quis molestie
+    magna porttitor. In nec rhoncus leo, placerat condimentum turpis. Nulla in orci orci. Sed sed nunc sed leo consequat
+    congue at in urna. Aenean eu auctor est.
+    Etiam at imperdiet nisi. Nulla quis metus non sem aliquet aliquam in id neque. Suspendisse maximus tincidunt sapien
+    imperdiet suscipit. Morbi a tempus enim. Etiam lobortis nisi eget tortor egestas, eu vulputate elit maximus. Quisque
+    venenatis massa sed ante mollis, non condimentum leo vestibulum. Nunc est felis, interdum vel libero at, efficitur
+    vestibulum risus.
+  </p>
+  <div>
+    <app-add-car
+      *ngIf="isCar"
+    [form]="form"
+    [isEdit]="isEdit"
+    (emitSaveForm)="save(this.form)"
+    ></app-add-car>
+    <app-add-part
+      *ngIf="!isCar"
+    [form]="form"
+    [isEdit]="isEdit"
+    (emitSaveForm)="save(this.form)"
+    ></app-add-part>
+  </div>
+</div>

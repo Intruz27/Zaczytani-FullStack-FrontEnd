@@ -1,0 +1,114 @@
+<h3 *ngIf="!isEdit" class="mb-3">Wypełnij kwestionariusz aby dodać nowe auto: </h3>
+<h3 *ngIf="isEdit" class="mb-3">Edytuj kwestionariusz aby wprowadzić zmiany: </h3>
+<form [formGroup]="form">
+  <div *ngIf="(isEdit && form.get('brand')?.value) || (!isEdit && form)">
+    <div class="row">
+    <div class="col-12 col-md-4">
+      <label for="inputState" class="mb-1 ms-1">Marka</label>
+      <input type="text" class="form-control" formControlName="brand">
+    </div>
+    <div class="col-12 col-md-4">
+      <label for="inputState" class="mb-1 ms-1">Model</label>
+      <input type="text" class="form-control" formControlName="model">
+    </div>
+    <div class="col-12 col-md-4">
+      <label for="inputState" class="mb-1 ms-1">Wersja</label>
+      <input type="text" class="form-control" formControlName="version">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Typ nadwozia</label>
+      <input type="text" class="form-control" formControlName="body">
+    </div>
+    <div class="col-12 col-md-6 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Rodzaj skrzyni</label>
+      <select id="inputState" class="form-control" formControlName="box">
+        <option>Manualna</option>
+        <option>Automatyczna</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Rodzaj paliwa</label>
+      <input type="text" class="form-control" formControlName="fuel">
+    </div>
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Pojemność silnika</label>
+      <input type="text" class="form-control" formControlName="engineCapacity">
+    </div>
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Średnie spalanie</label>
+      <input type="text" class="form-control" formControlName="fuelConsumption">
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2">
+      <div class="form-group form-check">
+        <label class="form-check-label" for="exampleCheck1">Czy hybryda?</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="isHybrid">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Przebieg</label>
+      <input type="text" class="form-control" formControlName="mileage">
+    </div>
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Rok produkcji</label>
+      <input type="text" class="form-control" formControlName="yearOfProduction">
+    </div>
+    <div class="col-12 col-md-4 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Cena</label>
+      <div class="d-flex">
+        <input type="text" class="form-control" formControlName="price"><span class="align-self-end ms-2">PLN</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-3">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Opis</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-5">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 1</label>
+      <input type="text" class="form-control" formControlName="imageLink">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 2</label>
+      <input type="text" class="form-control" formControlName="imageLink2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 3</label>
+      <input type="text" class="form-control" formControlName="imageLink3">
+    </div>
+  </div>
+
+  <div class="col-12 mt-4 d-flex flex-wrap align-items-end justify-content-end">
+    <button
+      type="reset"
+      class="btn btn-light ms-2 mt-2 mb-2 btn-field-h"
+    >
+      Wyczyść formularz
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary ms-2 mt-2 mb-2 btn-field-h"
+      (click)="save()"
+    >
+    {{isEdit ? 'Aktualizuj' : 'Zapisz'}}
+      
+    </button>
+  </div>
+  </div>
+</form>

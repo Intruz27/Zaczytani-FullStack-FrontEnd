@@ -1,0 +1,43 @@
+<div class="container py-5">
+  <h1 class="mb-3">Kup auto</h1>
+  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod tellus nec ex dapibus ultrices. Nullam feugiat ultricies ipsum, quis sodales velit auctor et. Nam aliquam dui sit amet ex hendrerit, quis molestie magna porttitor. In nec rhoncus leo, placerat condimentum turpis. Nulla in orci orci. Sed sed nunc sed leo consequat congue at in urna. Aenean eu auctor est.
+    Etiam at imperdiet nisi. Nulla quis metus non sem aliquet aliquam in id neque. Suspendisse maximus tincidunt sapien imperdiet suscipit. Morbi a tempus enim. Etiam lobortis nisi eget tortor egestas, eu vulputate elit maximus. Quisque venenatis massa sed ante mollis, non condimentum leo vestibulum. Nunc est felis, interdum vel libero at, efficitur vestibulum risus.
+  </p>
+  <h3>Zapoznaj się z naszą ofertą</h3>
+
+
+
+  <div class="row">
+    <div
+      *ngFor="let item of cars"
+      [routerLink]="['/showCar/' + item.id]"
+      class=" col-12 col-md-6 col-lg-4 mt-4 c-pointer">
+      <div class="card">
+        <img class="card-img-top" src="{{item.imageLink}}" alt="mainImage" height="300px" >
+        <div class="card-body">
+          <h5 class="card-title text-elipsis line-clamp-length-1 mb-3">{{item.brand}} {{item.model}} {{item.version}}</h5>
+          <div class="divider mb-3"></div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-6">
+              <img src="../../../../assets/mileageIcon.png" alt="distance" height="16px"><span class="ms-2">{{item.mileage}} km</span>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="../../../../assets/fuelIcon.png" alt="fuel" height="16px"><span class="ms-2">{{item.fuel}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <img src="../../../../assets/gearIcon.png" alt="gear" height="16px"><span class="ms-2">{{item.box}}</span>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="../../../../assets/yearIcon.png" alt="year" height="16px"><span class="ms-2">{{item.yearOfProduction}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text-center price-font">{{item.price}} PLN</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

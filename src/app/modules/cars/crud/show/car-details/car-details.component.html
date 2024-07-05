@@ -1,0 +1,58 @@
+<div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Marka: </label>
+      <span class="ms-1">{{carData.brand}}</span>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Rodzaj paliwa: </label>
+      <span class="ms-1">{{carData.fuel}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Model: </label>
+      <span class="ms-1">{{carData.model}}</span>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Hybryda: </label>
+      <span class="ms-1">{{carData.isHybrid ? 'Tak' : 'Nie'}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Wersja: </label>
+      <span class="ms-1">{{carData.version}}</span>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Skrzynia biegów:</label>
+      <span class="ms-1">{{carData.box}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Rok produkcji: </label>
+      <span class="ms-1">{{carData.yearOfProduction}}</span>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Typ nadwozia: </label>
+      <span class="ms-1">{{carData.body}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Pojemność silnika: </label>
+      <span class="ms-1">{{carData.engineCapacity}} KM</span>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="mb-1 fw-500">Przebieg: </label>
+      <span class="ms-1">{{carData.mileage}} km</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <label class="mb-1 fw-500">Średnie spalanie: </label>
+      <span class="ms-1">{{carData.fuelConsumption}}l/100km</span>
+    </div>
+  </div>
+</div>

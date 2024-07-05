@@ -1,0 +1,46 @@
+<div class="container py-5">
+  <h1 class="mb-3">Części samochodowe</h1>
+  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod tellus nec ex dapibus
+    ultrices. Nullam feugiat ultricies ipsum, quis sodales velit auctor et. Nam aliquam dui sit amet ex hendrerit, quis
+    molestie magna porttitor. In nec rhoncus leo, placerat condimentum turpis. Nulla in orci orci. Sed sed nunc sed leo
+    consequat congue at in urna. Aenean eu auctor est.
+    Etiam at imperdiet nisi. Nulla quis metus non sem aliquet aliquam in id neque. Suspendisse maximus tincidunt sapien
+    imperdiet suscipit. Morbi a tempus enim. Etiam lobortis nisi eget tortor egestas, eu vulputate elit maximus. Quisque
+    venenatis massa sed ante mollis, non condimentum leo vestibulum. Nunc est felis, interdum vel libero at, efficitur
+    vestibulum risus.
+  </p>
+  <h3>Zapoznaj się z naszą ofertą</h3>
+  <div class="row">
+    <div
+      *ngFor="let item of parts"
+      (click)="redirectTo(item.id)"
+      class="col-12 col-md-6 col-lg-4 mt-4 c-pointer">
+      <div class="card">
+        <img class="card-img-top" src="{{item.imageLink}}" alt="Card image cap" height="300px">
+        <div class="card-body">
+          <h5 class="card-title text-elipsis line-clamp-length-1 mb-3">{{item.title}}</h5>
+          <div class="divider mb-3"></div>
+          <div class="row mb-3 text-center">
+            <div class="col-12 col-md-6 border-end">
+              <img src="../../../../assets/partsConditionIcon.png" alt="condition" data-toggle="tooltip"
+                   data-placement="bottom" title="Stan przedmiotu" height="16px"><span
+              class="ms-2">{{item.condition}}</span>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="../../../../assets/deliveryIcon.png" alt="delivery" data-toggle="tooltip"
+                   data-placement="bottom" title="Czy istneje możliwość dostawy?" height="24px"><span
+              class="ms-2">{{item.delivery ? 'Tak' : 'Nie'}}</span>
+            </div>
+          </div>
+          <div class="divider mb-3"></div>
+          <div class="row ">
+            <p class="text-elipsis line-clamp-length-2 ">{{item.description}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text-center price-font">{{item.price}} PLN</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<h3 *ngIf="!isEdit" class="mb-3">Wypełnij kwestionariusz aby dodać nową część samochodową: </h3>
+<h3 *ngIf="isEdit" class="mb-3">Edytuj kwestionariusz aby wprowadzić zmiany: </h3>
+<form [formGroup]="form">
+  <div class="row">
+    <div class="col-12">
+      <label for="inputState" class="mb-1 ms-1">Tytuł</label>
+      <input type="text" class="form-control" formControlName="title">
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 col-md-6">
+      <label for="inputState" class="mb-1 ms-1">Marka</label>
+      <input type="text" class="form-control" formControlName="brand">
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="inputState" class="mb-1 ms-1">Model</label>
+      <input type="text" class="form-control" formControlName="model">
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 col-md-6">
+      <label for="inputState" class="mb-1 ms-1">Stan</label>
+      <select id="inputState" class="form-control" formControlName="condition">
+        <option>Nowy</option>
+        <option>Używany</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="inputState" class="mb-1 ms-1">Cena</label>
+      <div class="d-flex">
+        <input type="text" class="form-control" formControlName="price"><span class="align-self-end ms-2">PLN</span>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 col-md-4">
+      <div class="form-group form-check">
+        <label class="form-check-label" for="exampleCheck1">Możliwa opcja dostawy?</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="delivery">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-3">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Opis</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 mt-5">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 1</label>
+      <input type="text" class="form-control" formControlName="imageLink">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 2</label>
+      <input type="text" class="form-control" formControlName="imageLink2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-4">
+      <label for="inputState" class="mb-1 ms-1">Link do zdjęcia numer 3</label>
+      <input type="text" class="form-control" formControlName="imageLink3">
+    </div>
+  </div>
+
+  <div class="col-12 mt-4 d-flex flex-wrap align-items-end justify-content-end">
+    <button
+      type="reset"
+      class="btn btn-light ms-2 mt-2 mb-2 btn-field-h"
+    >
+      Wyczyść formularz
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary ms-2 mt-2 mb-2 btn-field-h"
+      (click)="save()"
+    >
+    {{isEdit ? 'Aktualizuj' : 'Zapisz'}}
+    </button>
+  </div>
+</form>
